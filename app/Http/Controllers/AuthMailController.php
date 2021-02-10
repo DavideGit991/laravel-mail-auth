@@ -28,5 +28,7 @@ class AuthMailController extends Controller
 
         Mail::to(Auth::user()->email)
             ->send(new EmailDefault($data));
+
+        return redirect()->route('home');
     }
 }
